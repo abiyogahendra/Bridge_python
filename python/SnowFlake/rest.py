@@ -20,11 +20,11 @@ def add_user():
 			#do not save password as a plain text
 			_hashed_password = generate_password_hash(_password)
 			# save edits
-			sql = "INSERT INTO tbl_user(user_name, user_email, user_password) VALUES(%s, %s, %s)"
-			data = (_name, _email, _hashed_password,)
-			conn = mysql.connect()
+			sql = "INSERT INTO user_table(user_name, user_email, user_password) VALUES(%s, %s, %s)" #insert data yang sudah di ambil ke dalam database
+			data = (_name, _email, _hashed_password,) #dengan memasukkan argument name, email, hashed pass
+			conn = mysql.connect() #membuat koneksi sementara dengan database
 			cursor = conn.cursor()
-			cursor.execute(sql, data)
+			cursor.execute(sql, data) #mengeksekusi data query dengan memasukkan argument dari objek data
 			conn.commit()
 			resp = jsonify('User added successfully!')
 			resp.status_code = 200
@@ -42,7 +42,7 @@ def users():
 	try:
 		conn = mysql.connect()
 		cursor = conn.cursor(pymysql.cursors.DictCursor)
-		cursor.execute("SELECT * FROM tbl_user")
+		cursor.execute("SELECT * FROM user_table")
 		rows = cursor.fetchall()
 		resp = jsonify(rows)
 		resp.status_code = 200

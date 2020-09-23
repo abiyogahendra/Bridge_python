@@ -7,9 +7,9 @@ app.app_context().push()
 def datasets():
     
 	try:
-		conn = mysql.connect()
+		conn = mysql.connect() #membuat sebuah penghubung dengan fungsi mysql.connect
 		cursor = conn.cursor(pymysql.cursors.DictCursor)
-		cursor.execute("SELECT class, text as sentence FROM datasets")
+		cursor.execute("SELECT class, text as sentence FROM datasets") # mengambil data dari datasets dengan column class dan text
 		rows = cursor.fetchall()
 		return rows
 	except Exception as e:
@@ -20,7 +20,7 @@ def datasets():
 
 def insert(classN, text):
 	try:
-		sql = "INSERT INTO datasets(class, text) VALUES(%s, %s)" #digunakna untuk melakukan insert kedalam data base dengan nama variable sql
+		sql = "INSERT INTO datasets(class, text) VALUES(%s, %s)" #digunakan untuk melakukan insert kedalam data base dengan nama variable sql
 		data = (classN, text) #Melakukan pemindahan argument yaitu classN dan text
 		conn = mysql.connect()
 		cursor = conn.cursor()
