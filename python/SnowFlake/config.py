@@ -1,6 +1,7 @@
 from app import app
 from flaskext.mysql import MySQL
 
+
 # Twitter configurations
 ACCESS_TOKEN = "1278260576251076608-AZd9nafiaqpn6Z1Eaq2Qgy9uYFgpBM"
 ACCESS_TOKEN_SECRET = "Mf3Jn8h53FNSK0e9DdnBILX6KOSXABKna9rikzLSo7EVL"

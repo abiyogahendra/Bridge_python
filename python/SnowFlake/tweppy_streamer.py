@@ -24,7 +24,7 @@ class TwitterStreamer():
             stream = Stream(auth, listener)
 
         # This line filter Twitter Streams to capture data by the keywords:
-        stream.filter(track=hash_tag_list)
+            stream.filter(track=hash_tag_list)
 
 
 # # # # TWITTER STREAM LISTENER # # # #
