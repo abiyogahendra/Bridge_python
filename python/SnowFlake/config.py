@@ -12,6 +12,6 @@ CONSUMER_SECRET = "b6QZ4eQwOvJooTPloWTHOGEPKl8wApmeVMs14hyqnHfNsvCRuC"
 mysql = MySQL()
 app.config['MYSQL_DATABASE_USER'] = 'root'
 app.config['MYSQL_DATABASE_PASSWORD'] = ''
-app.config['MYSQL_DATABASE_DB'] = 'pancasila_recognition'
+app.config['MYSQL_DATABASE_DB'] = 'pancasilais_recognition'
 app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 mysql.init_app(app)

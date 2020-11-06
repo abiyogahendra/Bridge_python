@@ -1,9 +1,11 @@
 import pymysql
+import werkzeug
 from app import app
 from config import mysql
 from flask import jsonify
 from flask import flash, request
-from werkzeug import generate_password_hash, check_password_hash
+from werkzeug import security
+from werkzeug.security import generate_password_hash, check_password_hash
 from ANN import classify 
 from controller import historyDetection
 from helper import removeEmoji
